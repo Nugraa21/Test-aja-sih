@@ -1,29 +1,26 @@
-# 🚀 Web Development Learning Lab
+# 🐍 Python Developer Lab
 
-Welcome to my personal learning repository!  
-This repository documents my journey in learning **HTML, CSS, and basic web development**.
+A collection of interactive Python terminal tools built for learning, experimenting, and consistency.
+
+## ✨ Features
+- Interactive CLI menu
+- Colorful terminal UI
+- File logging system
+- Modular Python structure
+- Beginner-friendly but scalable
 
 ## 🎯 Purpose
-- Practice web development fundamentals
-- Store notes, experiments, and mini projects
-- Build consistency and improve GitHub activity
-- Track progress publicly
+This repository is created to:
+- Practice Python fundamentals
+- Build real CLI utilities
+- Maintain GitHub activity
+- Experiment with terminal-based apps
 
-## 📚 Contents
-- 📘 HTML & CSS notes
-- 🧪 Mini projects
-- 📝 Progress checklist
-- 🔄 Continuous updates
+## 🛠 Technologies
+- Python 3.x
+- Standard Library
+- ANSI Terminal Colors
 
-## 🛠️ Technologies
-- HTML5
-- CSS3
-- Git & GitHub
-
-## 📌 Notes
-This repository is actively updated as part of my learning process.  
-Feel free to explore, fork, or give suggestions.
-
----
-
-✨ _Consistency beats perfection._
+## 🚀 Run
+```bash
+python main.py
