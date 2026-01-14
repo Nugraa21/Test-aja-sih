@@ -4,11 +4,13 @@
       "nugra": {
         "readme.txt": "Selamat datang di Nugra21.SaWiT-OS.\nTanam kode, panen keterampilan.",
         "projects": {
-          "sawit.py": "# Contoh skrip sawit\nprint('Halo Sawit!')"
+          "sawit.py": "# Contoh skrip sawit\nprint('Halo Sawit!')",
+          "asu": {}
         }
       },
       "shared": {
-        "motivasi.txt": "Sawit: Hijau, Kuat, Masa Depan."
+        "motivasi.txt": "Sawit: Hijau, Kuat, Masa Depan.",
+        "gabut.txt": "Sawit: Hijau, Kuat, Masa Depan."
       }
     },
     "bin": {
