@@ -1,291 +1,175 @@
 
-# 🌴 SaWiTOS — Nugra21  Terminal OS 
+# SaWiT OS v1.1 - Terminal Nugra21
 
-SaWiTOS adalah **Fake Linux Terminal OS berbasis Python (CLI)**  
-yang meniru pengalaman menggunakan Linux Terminal dengan **command custom**,  
-**mode user & mode pejabat (administrator)**, serta **data yang tersimpan permanen**.
+**SaWiT OS** adalah simulasi sistem operasi berbasis terminal (CLI) yang dibuat sepenuhnya dengan Python. Terinspirasi dari dunia perkebunan kelapa sawit, proyek ini menggabungkan nuansa Indonesia, warna-warni terminal, dan fitur-fitur seru seperti mode sudo, filesystem permanen, hingga telur paskah!
 
-> ⚠️ Catatan:  
-> SaWiTOS **BUKAN sistem operasi asli**, melainkan **simulasi terminal Linux**  
-> untuk pembelajaran, showcase, dan fun project.
+**Creator:** Ludang Prasetyo Nugroho (@nugra)  
+**Versi:** 1.1 (SAWIT-ENHANCED)  
+**Tanggal Rilis:** Januari 2026  
+**Bahasa:** Indonesia (dengan sentuhan kreatif perkebunan sawit 🌴)
 
----
+## Fitur Utama
 
-## 📌 Informasi Umum
+- Terminal interaktif dengan prompt cantik (waktu, branch, role)
+- Filesystem virtual permanen (disimpan di `data/sawit_fs.json`)
+- Dua role pengguna: **RAKYAT** dan **PEJABAT** (dengan SUDO)
+- Perintah bertema sawit: TANAM, PANEN, RAWAT, TEBANG, IRIGASI, dll
+- Animasi loading, banner acak, neofetch custom
+- Riwayat perintah, tree direktori, pencarian file
+- Telur paskah dengan ketik `SAWIT`
 
-| Item | Detail |
-|----|------|
-| Nama OS | **SaWiTOS** |
-| Versi | v1.0 |
-| Tipe | Fake Linux / CLI Simulator |
-| Bahasa | Python |
-| Creator | **Nugra21** |
-| Mode | User & Pejabat (Admin) |
-| Data | Persistent (JSON) |
-
----
-
-## ✨ Fitur Utama
-
-- 🎨 Terminal berwarna (tidak monokrom)
-- 🖥️ Tampilan mirip Linux terminal
-- 👤 Multi-user system
-- 🔐 Mode User & Mode Pejabat
-- 🔑 sudo / su
-- 💾 Data tidak hilang saat keluar
-- 📊 Informasi sistem lengkap
-- 📂 Manajemen file & folder (fake)
-- 🧠 Command custom & Linux-like
-- 🧹 clear, exit, reboot
-- 🔄 Modular (multi file)
-
----
-
-## 📁 Struktur Project
+## Struktur Direktori Awal
 
 ```
-
-sawitos/
-│
-├─ main.py                # Entry point
-├─ core/
-│   ├─ terminal.py        # UI, prompt, banner
-│   ├─ commands.py        # Semua command
-│   ├─ system.py          # Info OS
-│   └─ auth.py            # User & mode pejabat
-│
-├─ data/
-│   ├─ system.json        # Data sistem
-│   └─ users.json         # Data user
-│
-├─ requirements.txt
-├─ README.md
-└─ LICENSE
-
-````
-
----
-
-## ⚙️ Instalasi & Menjalankan SaWiTOS
-
-### 1️⃣ Clone Repository
-```bash
-git clone https://github.com/nugra21/sawitos.git
-cd sawitos
-````
-
-### 2️⃣ Install Dependency
-
-```bash
-pip install -r requirements.txt
+/ (root)
+├── home/
+│   ├── nugra/
+│   │   ├── readme.txt
+│   │   └── projects/
+│   │       └── sawit.py
+│   └── shared/
+│       └── motivasi.txt
+└── bin/
+    └── help.txt
 ```
 
-### 3️⃣ Jalankan OS
+## Cara Install & Persiapan
+
+### 1. Requirements
+Pastikan kamu punya:
+- Python 3.7 atau lebih baru
+- pip (Python package manager)
+
+### 2. Install Library yang Dibutuhkan
+Buka terminal/cmd, lalu jalankan:
 
 ```bash
-python main.py
+pip install colorama
 ```
 
----
+> Hanya `colorama` yang wajib. Library lain (os, datetime, json, dll) sudah bawaan Python.
 
-## 🖥️ Tampilan Prompt
+### 3. Download & Jalankan Code
 
-| Mode    | Prompt                           |
-| ------- | -------------------------------- |
-| User    | `Nugra21@SaWiTOS:/home $`        |
-| Pejabat | `Nugra21@SaWiTOS:/root #PEJABAT` |
-
----
-
-## 👤 Sistem User & Mode
-
-### 🔓 Mode User
-
-* Akses terbatas
-* Tidak bisa mengubah sistem
-* Default saat login
-
-### 🔐 Mode Pejabat (Administrator)
-
-* Akses penuh
-* Bisa kelola user & sistem
-* Mirip `root` di Linux
-
-Masuk mode pejabat:
+1. Simpan kode sebagai `sawit_os.py` atau `main.py`
+2. Jalankan dengan:
 
 ```bash
-sudo su
+python sawit_os.py
 ```
 
-Keluar mode pejabat:
+Atau jika ingin langsung jadi file .exe (Windows):
 
 ```bash
-exit
+pip install pyinstaller
+pyinstaller --onefile --console --name "SaWiT-OS-v1.1" sawit_os.py
 ```
 
----
+Hasilnya ada di folder `dist/SaWiT-OS-v1.1.exe` → tinggal double-click!
 
+## Daftar Perintah Lengkap
 
-## 📜 Daftar Command SaWiTOS (Custom)
+| Perintah      | Alias       | Keterangan                                                                 | Akses          |
+|----------------|-------------|-----------------------------------------------------------------------------|----------------|
+| `LIHAT`       | `LS`        | Tampilkan isi direktori saat ini (berwarna)                                | Semua          |
+| `MASUK`       | -           | Masuk ke folder (cd)                                                       | Semua          |
+| `MUNDUR`      | -           | Kembali ke folder atas                                                     | Semua          |
+| `POSISI`      | -           | Tampilkan path saat ini (pwd)                                              | Semua          |
+| `BUKA`        | -           | Buat folder baru                                                           | Semua          |
+| `BAKAR`       | -           | Hapus folder (hanya PEJABAT!)                                              | PEJABAT        |
+| `KEBUN`       | -           | Tampilkan struktur pohon direktori                                         | Semua          |
+| `TANAM`       | -           | Buat file kosong baru                                                      | Semua          |
+| `PANEN`       | -           | Baca isi file                                                              | Semua          |
+| `RAWAT`       | -           | Edit file (ketik `:simpan` untuk save, `:keluar` untuk batal)              | Semua          |
+| `TEBANG`      | -           | Hapus file atau folder                                                     | Semua          |
+| `CANGKOK`     | -           | Salin file (CANGKOK sumber tujuan)                                         | Semua          |
+| `PINDAH`      | -           | Pindah atau rename file/folder                                             | Semua          |
+| `IRIGASI`     | -           | Cari file/folder berdasarkan kata kunci                                    | Semua          |
+| `BERSIHKAN`   | `CLS`       | Bersihkan layar                                                            | Semua          |
+| `WAKTU`       | -           | Tampilkan waktu saat ini                                                   | Semua          |
+| `SIAPA`       | -           | Lihat nama user dan role saat ini                                          | Semua          |
+| `INFO_SAWIT`  | -           | Info sistem dasar                                                          | Semua          |
+| `NEOFETCH`    | -           | Dashboard info sistem lengkap (uptime, stats FS, dll)                      | Semua          |
+| `SUDO`        | -           | Naik ke mode PEJABAT (password default: 123)                               | RAKYAT         |
+| `RAKYAT`      | `UNSU`      | Turun kembali ke mode RAKYAT                                               | PEJABAT        |
+| `BANTUAN`     | -           | Tampilkan daftar semua perintah                                            | Semua          |
+| `HISTORY`     | -           | Lihat 10 perintah terakhir                                                 | Semua          |
+| `SAWIT`       | -           | Telur paskah spesial 🌴                                                    | Semua          |
+| `EXIT`        | `PULANG`    | Keluar dari SaWiT OS (data otomatis disimpan)                              | Semua          |
 
-SaWiTOS menggunakan **command berbahasa Indonesia** dengan tema **perkebunan / sawit** 🌴
-Semua command di bawah adalah **COMMAND RESMI SaWiTOS**.
+## Tutorial Pemakaian (Langkah demi Langkah)
 
----
+### 1. Pertama Kali Buka
+- Jalankan `python sawit_os.py` atau double-click .exe
+- Muncul animasi loading → banner → prompt seperti ini:
 
-## 📂 Command Navigasi & Direktori
+```
+nugra@sawit:/home/nugra] (main) 23:22 RAKYAT -> 
+```
 
-| Command          | Fungsi                                |
-| ---------------- | ------------------------------------- |
-| `LIHAT`          | Menampilkan isi direktori saat ini    |
-| `MASUK <folder>` | Masuk ke direktori                    |
-| `MUNDUR`         | Kembali ke direktori sebelumnya       |
-| `POSISI`         | Menampilkan path direktori aktif      |
-| `BUKA <folder>`  | Membuat folder baru                   |
-| `BAKAR <folder>` | Menghapus folder (**MODE PEJABAT**)   |
-| `KEBUN`          | Menampilkan struktur direktori (tree) |
-
----
-
-## 📄 Command File
-
-| Command               | Fungsi              |
-| --------------------- | ------------------- |
-| `TANAM <file>`        | Membuat file kosong |
-| `PANEN <file>`        | Membaca isi file    |
-| `RAWAT <file>`        | Edit isi file       |
-| `TEBANG <file>`       | Menghapus file      |
-| `CANGKOK <src> <dst>` | Copy file           |
-| `PINDAH <src> <dst>`  | Memindahkan file    |
-| `GANTI <lama> <baru>` | Rename file         |
-
----
-
-## 🧹 Command Terminal
-
-| Command     | Fungsi                      |
-| ----------- | --------------------------- |
-| `BERSIHKAN` | Membersihkan layar terminal |
-| `CLS`       | Alias dari `BERSIHKAN`      |
-| `WAKTU`     | Menampilkan waktu & tanggal |
-
----
-
-## 👤 Command User & Akses
-
-| Command     | Fungsi                                 |
-| ----------- | -------------------------------------- |
-| `SIAPA`     | Menampilkan user aktif                 |
-| `SU <user>` | Ganti user                             |
-| `SUDO`      | Masuk **MODE PEJABAT (Administrator)** |
-
-📌 **MODE PEJABAT** diperlukan untuk:
-
-* Menghapus folder (`BAKAR`)
-* Operasi sistem tertentu
-
----
-
-## 🖥️ Command Sistem
-
-| Command      | Fungsi                     |
-| ------------ | -------------------------- |
-| `INFO_SAWIT` | Informasi sistem SaWiTOS   |
-| `NEOFETCH`   | Informasi sistem ala Linux |
-| `BANTUAN`    | Menampilkan semua command  |
-| `SAWIT`      | Easter egg rahasia 🌴      |
-
----
-
-## 🚪 Command Keluar
-
-| Command  | Fungsi                    |
-| -------- | ------------------------- |
-| `EXIT`   | Keluar dari SaWiTOS       |
-| `PULANG` | Alias keluar dari SaWiTOS |
-
----
-
-## 🧪 Contoh Penggunaan
-
+### 2. Eksplorasi Dasar
 ```bash
-LIHAT
+LIHAT          # lihat isi folder saat ini
+MASUK projects # masuk ke folder projects
+MUNDUR         # kembali
+POSISI         # lihat di mana kamu sekarang
+```
+
+### 3. Buat & Edit File
+```bash
+TANAM catatan.txt     # buat file baru
+RAWAT catatan.txt     # edit file
+>> Halo ini isi baru
+>> Baris kedua
+:simpan               # simpan perubahan
+PANEN catatan.txt     # baca isi file
+```
+
+### 4. Buat Folder & Struktur
+```bash
+BUKA dokumen
 MASUK dokumen
-TANAM catatan.txt
-RAWAT catatan.txt
-PANEN catatan.txt
-SUDO
-BAKAR dokumen
-PULANG
+TANAM surat.txt
+RAWAT surat.txt
+>> Isi surat penting...
+:simpan
+MUNDUR
+KEBUN                 # lihat struktur pohon
 ```
 
----
+### 5. Mode PEJABAT (SUDO)
+```bash
+SUDO
+[sudo] password untuk nugra: 123    # ketik 123 (default)
+# Sekarang prompt jadi merah & role PEJABAT
+BAKAR dokumen         # hanya PEJABAT yang bisa bakar folder!
+RAKYAT                # kembali jadi RAKYAT
+```
 
-## 🔐 Catatan Penting
+### 6. Fitur Keren Lain
+```bash
+NEOFETCH        # dashboard sistem
+IRIGASI sawit   # cari semua yang ada kata "sawit"
+HISTORY         # lihat riwayat perintah
+SAWIT           # telur paskah 😄
+```
 
-* Command **tidak case-sensitive**
-  (`lihat`, `LIHAT`, `Lihat` → sama)
-* Data **tersimpan permanen** (JSON)
-* Mode **PEJABAT ≈ root Linux**
+### 7. Keluar
+```bash
+EXIT            # atau PULANG
+# Data otomatis disimpan ke data/sawit_fs.json
+```
 
----
+## Catatan
+- Password default user `nugra` dan `pejabat` adalah **123**
+- Data tersimpan permanen di folder `data/` (otomatis dibuat)
+- Semua perubahan file/folder langsung tersimpan saat eksekusi perintah
 
-## 🌴 Filosofi Command SaWiTOS
+## Terima Kasih!
+Selamat menanam kode dan memanen keterampilan di **SaWiT OS**!  
+Semoga proyek ini menghibur dan bermanfaat.  
+Jangan lupa istirahat, minum air putih, dan terus berkarya! 🌴🚀
 
-| Konsep | Arti               |
-| ------ | ------------------ |
-| TANAM  | Buat file          |
-| PANEN  | Baca file          |
-| RAWAT  | Edit file          |
-| TEBANG | Hapus file         |
-| BAKAR  | Hapus folder       |
-| KEBUN  | Struktur direktori |
+**Sawit adalah masa depan. Terus berkembang.**
 
----
-## 💾 Penyimpanan Data
-
-Semua data disimpan di file JSON:
-
-| File          | Fungsi    |
-| ------------- | --------- |
-| `system.json` | Info OS   |
-| `users.json`  | Data user |
-
-✔️ Data tidak hilang
-✔️ Bisa diedit manual
-✔️ Bisa dikembangkan
-
----
-
-## 🎨 Customisasi
-
-* Edit **warna & UI** → `core/terminal.py`
-* Tambah command → `core/commands.py`
-* Tambah info OS → `data/system.json`
-
----
-
-## 🚀 Rencana Upgrade
-
-* 🔐 Login screen
-* 🧠 Fake process manager
-* 🌐 Network command
-* 🎮 Mini game terminal
-* 🐧 Bash script emulator
-
----
-
-## 📜 Lisensi
-
-MIT License
-Bebas digunakan, dimodifikasi, dan dibagikan.
-
----
-
-## 👑 Author
-
-**Nugra21**
-SaWiTOS Fake Linux Terminal OS
-Made with ☕ & 🌴
-
-> “Bukan Linux sungguhan, tapi rasanya Linux 😎”
+— Ludang Prasetyo Nugroho (nugra)
